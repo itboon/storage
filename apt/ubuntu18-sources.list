@@ -1,0 +1,8 @@
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted
