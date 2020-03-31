@@ -15,8 +15,8 @@ jobs:
     
     - name: copy files to oss
       run: |
-        mkdir -p ~/bin
-        aliOSS="~/bin/ossutil"
+        mkdir -p ${HOME}/bin
+        aliOSS="${HOME}/bin/ossutil"
         curl -o $aliOSS -L http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         chmod a+rx $aliOSS
         $aliOSS config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
