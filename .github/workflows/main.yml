@@ -14,10 +14,15 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: copy files to oss
+      shell: bash
+      env:
+        OSS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
+        OSS_KEY_SE: ${{ secrets.OSS_KEY_SECRET }}
       run: |
         mkdir -p ${HOME}/bin
         aliOSS="${HOME}/bin/ossutil"
         curl -o $aliOSS -L http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         chmod a+rx $aliOSS
-        $aliOSS config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
+        $aliOSS config -e oss-cn-hongkong.aliyuncs.com -i $OSS_KEY_ID -k $OSS_KEY_SE
         $aliOSS cp -r ./ oss://github-ci/
+    
