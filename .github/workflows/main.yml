@@ -15,6 +15,7 @@ jobs:
     
     - name: setup oss env
       run: |
+        mkdir -p ~/bin
         curl -o ~/bin/ossuitl -L http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         chmod a+rx ~/bin/ossuitl
         ossutil config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
