@@ -13,10 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: copy fiels to oss
+    - name: copy files to oss
       run: |
         mkdir -p ~/bin
-        curl -o ~/bin/ossuitl -L http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
-        chmod a+rx ~/bin/ossuitl
-        ~/bin/ossutil config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
-        ~/bin/ossutil cp -r ./ oss://github-ci/
+        curl -o ~/bin/ossutil -L http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
+        chmod a+rx ~/bin/ossutil
+        ossutil config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
+        ossutil cp -r ./ oss://github-ci/
